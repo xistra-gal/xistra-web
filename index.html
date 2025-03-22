@@ -29,95 +29,120 @@
     body {
       background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('images/Fondo.png') no-repeat center center fixed;
       background-size: cover;
-       font-family: 'Ubuntu', sans-serif;
-       color: #fff;
-       line-height: 1.6;
+      font-family: 'Ubuntu', sans-serif;
+      color: #fff;
+      line-height: 1.6;
     }
     /* Encabezado */
     header {
-       text-align: center;
-       padding: 40px 20px;
+      text-align: center;
+      padding: 40px 20px;
     }
     header h1 {
-       font-family: 'Airbeat', sans-serif;
-       font-size: 5rem;
-       letter-spacing: 0.1em;
-       color: #00fff2;
-       margin-bottom: 0px;
+      font-family: 'Airbeat', sans-serif;
+      font-size: 5rem;
+      letter-spacing: 0.1em;
+      color: #00fff2;
+      margin-bottom: 0;
     }
     header h2 {
-       font-family: 'Ubuntu', sans-serif;
-       font-size: 1.8rem;
-       color: #fff;
-       margin-bottom: 10px;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 10px;
     }
-    /* Separador en blanco */
+    /* Separador */
     .separator {
-       width: 80%;
-       height: 2px;
-       background: #7e7e7e;
-       margin: 0 auto 40px auto;
-       border: none;
+      width: 80%;
+      height: 2px;
+      background: #7e7e7e;
+      margin: 0 auto 40px;
+      border: none;
     }
-    /* Contenedor central minimalista */
+    /* Contenedor central */
     main {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
+    /* Contenedor para agrupar los bloques de contenido */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+    }
+    /* Bloque de contenido con fondo degradado */
     .content-box {
-       background: linear-gradient(rgba(0, 0, 0, 0.384), rgba(0, 214, 221, 0.3));
-       padding: 40px;
-       max-width: 90%;
-       width: 800px;
-       text-align: center;
-       transition: box-shadow 0.3s ease;
-       border-radius: 10px;
+      background: linear-gradient(rgba(0, 0, 0, 0.384), rgba(0, 214, 221, 0.3));
+      padding: 40px;
+      max-width: 800px;
+      width: 90%;
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+      border-radius: 10px;
     }
     .content-box:hover {
-       box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.7);
     }
     .content-box p {
-       font-size: 1.2rem;
-       margin-bottom: 20px;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
     }
-    .content-box a {
-       color: #1da1f2;
-       text-decoration: none;
-       transition: color 0.3s ease;
+    /* Bloque de texto adicional */
+    .content-text {
+      max-width: 800px;
+      width: 90%;
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
     }
-    .content-box a:hover {
-       color: #00ffea;
+    /* Enlaces */
+    .content-box a, .content-text a {
+      color: #1da1f2;
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
-    /* Pie de página con enlaces de contacto */
+    .content-box a:hover, .content-text a:hover {
+      color: #00ffea;
+    }
+    /* Pie de página */
     footer {
-       text-align: center;
-       margin-top: 40px;
-       padding-bottom: 20px;
+      text-align: center;
+      margin-top: 40px;
+      padding-bottom: 20px;
     }
     footer a {
-       color: #1da1f2;
-       text-decoration: none;
-       transition: color 0.3s ease, transform 0.3s ease;
-       font-size: 1.1rem;
-       margin: 0 10px;
+      color: #1da1f2;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+      font-size: 1.1rem;
+      margin: 0 10px;
     }
     footer a:hover {
-       transform: scale(1.05);
-       color: #00ffea;
+      transform: scale(1.05);
+      color: #00ffea;
     }
-    /* Ajustes responsivos */
+    /* Responsividad */
     @media (max-width: 768px) {
-       header h1 {
-          font-size: 2.5rem;
-       }
-       header h2 {
-          font-size: 1.3rem;
-       }
-       .content-box p {
-          font-size: 1rem;
-       }
+      header h1 {
+        font-size: 2.5rem;
+      }
+      header h2 {
+        font-size: 1.3rem;
+      }
+      .content-box p,
+      .content-text {
+        font-size: 1rem;
+      }
+      header {
+        padding: 20px 10px;
+      }
+      main {
+        padding: 10px;
+      }
     }
   </style>
 </head>
@@ -128,20 +153,20 @@
   </header>
   <hr class="separator">
   <main>
-   <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+    <div class="container">
       <div class="content-box">
          <p>
-            Somos una startup gallega que busca disrumpir en el desarrollo de redes de drones descentralizadas, 
-            ofreciendo una manera sencilla a los comercios y empresas de gestionar sus propias flotas de drones.
+           Somos una startup gallega que busca disrumpir en el desarrollo de redes de drones descentralizadas, 
+           ofreciendo una manera sencilla a los comercios y empresas de gestionar sus propias flotas de drones.
          </p>
       </div>
-      <div style="max-width: 90%; width: 800px; text-align: center; ">
+      <div class="content-text">
          <p>
-            Nuestra página web se encuentra en desarrollo. Mientras tanto, puedes seguirnos en LinkedIn o contactarnos por correo electrónico. 
-            Pronto tendremos más información disponible.
+           Nuestra página web se encuentra en desarrollo. Mientras tanto, puedes seguirnos en LinkedIn o contactarnos por correo electrónico. 
+           Pronto tendremos más información disponible.
          </p>
       </div>
-   </div>
+    </div>
   </main>
   <footer>
     <p>
