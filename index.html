@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XISTRA</title>
+    <!-- Google Fonts para tipografía tecnológica -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos de redes sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
+      integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMAd8mk4xO2xnWAd19y4UGrySMtYF9pEZaTo8P9" crossorigin="anonymous">
+    <style>
+      /* Reinicio de márgenes y paddings */
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+      /* Estilos globales para el body */
+      body {
+         background-color: #000;
+         color: #fff;
+         font-family: 'Orbitron', sans-serif;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 100vh;
+         text-align: center;
+         padding: 20px;
+      }
+      .container {
+         max-width: 800px;
+      }
+      /* Título con efecto degradado */
+      h1 {
+         font-size: 3rem;
+         margin-bottom: 10px;
+         letter-spacing: 0.1em;
+         background: linear-gradient(90deg, #00ffea, #ff00a2);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+      }
+      /* Descripción de la startup */
+      p {
+         font-size: 1.2rem;
+         margin-bottom: 30px;
+         line-height: 1.5;
+         opacity: 0.8;
+      }
+      /* Enlaces a redes sociales */
+      .social-links a {
+         color: #fff;
+         margin: 0 10px;
+         font-size: 1.5rem;
+         transition: transform 0.3s ease, color 0.3s ease;
+         text-decoration: none;
+      }
+      .social-links a:hover {
+         transform: scale(1.1);
+         color: #1da1f2;
+      }
+      /* Ajustes responsivos */
+      @media (max-width: 768px) {
+         h1 {
+            font-size: 2.5rem;
+         }
+         p {
+            font-size: 1rem;
+         }
+         .social-links a {
+            font-size: 1.2rem;
+         }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Nombre de la Startup</h1>
+      <p>Innovación y tecnología al servicio del futuro. Breve descripción de la startup que revoluciona el mercado.</p>
+      <div class="social-links">
+         <a href="https://twitter.com/tu_usuario" target="_blank"><i class="fab fa-twitter"></i></a>
+         <a href="https://facebook.com/tu_usuario" target="_blank"><i class="fab fa-facebook-f"></i></a>
+         <a href="https://linkedin.com/in/tu_usuario" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+         <a href="https://instagram.com/tu_usuario" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </body>
+</html>
