@@ -43,7 +43,7 @@
         font-family: 'Ubuntu', sans-serif;
         font-weight: bold;
         font-size: 3rem;
-        color: #ffffff;
+        color: #dfffff;
         text-align: center;
     }
 
@@ -53,7 +53,7 @@
       width: 30%;
       height: 2px;
       margin: 0.5rem auto 0;
-      background-color: #ffffff5d;
+      background-color: #2b837e71;
       border-radius: 2px;
       margin-bottom: 2rem;
     }
@@ -80,7 +80,11 @@
   }
 
   a {
-    color: #00ccff;
+    color: #00a8a8;
+  }
+  a:hover {
+    color: rgb(73, 255, 255);
+    
   }
 
   p {
@@ -98,6 +102,7 @@
 #hero {
     margin-top: 4rem;
     font-family: 'Ubuntu', sans-serif;
+    color: #cdffff;
     font-weight: bold;
     font-size: 1.6rem;
     text-align: center;
