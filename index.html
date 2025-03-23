@@ -4,180 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>XISTRA</title>
-  <meta name="description" content="Startup gallega que busca disrumpir en el desarrollo de redes de drones descentralizadas.">
-  
-  <!-- Favicon: logo que aparecerá en la barra de búsqueda -->
-  <link rel="icon" type="image/png" sizes="32x32" href="images/Logo.png">
-  
-  <!-- Google Fonts para Ubuntu -->
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome para iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
-    integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMAd8mk4xO2xnWAd19y4UGrySMtYF9pEZaTo8P9" crossorigin="anonymous">
-  <style>
-    /* Declaración de la fuente Airbeat para el título */
-    @font-face {
-       font-family: 'Airbeat';
-       src: url('fonts/Airbeat.otf') format('opentype'),
-            url('fonts/Airbeat.ttf') format('truetype');
-       font-weight: normal;
-       font-style: normal;
-    }
-    /* Reinicio de márgenes y paddings */
-    * {
-       margin: 0;
-       padding: 0;
-       box-sizing: border-box;
-    }
-    /* Fondo SVG que ocupa toda la pantalla */
-    body {
-      background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('images/Fondo.png') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Ubuntu', sans-serif;
-      color: #fff;
-      line-height: 1.6;
-    }
-    /* Encabezado */
-    header {
-      text-align: center;
-      padding: 40px 20px;
-    }
-    header h1 {
-      font-family: 'Airbeat', sans-serif;
-      font-size: 5rem;
-      letter-spacing: 0.1em;
-      color: #00fff2;
-      margin-bottom: 0;
-    }
-    header h2 {
-      font-family: 'Ubuntu', sans-serif;
-      font-size: 1.8rem;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    /* Separador */
-    .separator {
-      width: 80%;
-      height: 2px;
-      background: #7e7e7e;
-      margin: 0 auto 40px;
-      border: none;
-    }
-    /* Contenedor central */
-    main {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    /* Contenedor para agrupar los bloques de contenido */
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      width: 100%;
-    }
-    /* Bloque de contenido con fondo degradado */
-    .content-box {
-      background: linear-gradient(rgba(0, 0, 0, 0.384), rgba(0, 214, 221, 0.3));
-      padding: 40px;
-      max-width: 800px;
-      width: 90%;
-      text-align: center;
-      transition: box-shadow 0.3s ease;
-      border-radius: 10px;
-    }
-    .content-box:hover {
-      box-shadow: 0 8px 16px rgba(0,0,0,0.7);
-    }
-    .content-box p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-    /* Bloque de texto adicional */
-    .content-text {
-      max-width: 800px;
-      width: 90%;
-      text-align: center;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-    /* Enlaces */
-    .content-box a, .content-text a {
-      color: #1da1f2;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .content-box a:hover, .content-text a:hover {
-      color: #00ffea;
-    }
-    /* Pie de página */
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      padding-bottom: 20px;
-    }
-    footer a {
-      color: #1da1f2;
-      text-decoration: none;
-      transition: color 0.3s ease, transform 0.3s ease;
-      font-size: 1.1rem;
-      margin: 0 10px;
-    }
-    footer a:hover {
-      transform: scale(1.05);
-      color: #00ffea;
-    }
-    /* Responsividad */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-      header h2 {
-        font-size: 1.3rem;
-      }
-      .content-box p,
-      .content-text {
-        font-size: 1rem;
-      }
-      header {
-        padding: 20px 10px;
-      }
-      main {
-        padding: 10px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
+
+
 <body>
+
+  <div class="overlay"></div>
+
   <header>
     <h1>XISTRA</h1>
-    <h2>smart drones.</h2>
+    <nav>
+      <ul>
+        <li><a href="#nosotros">Sobre Nosotros</a></li>
+        <li><a href="#vision">Nuestra Vision</a></li>
+        <li><a href="#objetivos">Objetivos</a></li>
+      </ul>
+    </nav>
   </header>
-  <hr class="separator">
-  <main>
-    <div class="container">
-      <div class="content-box">
-         <p>
-           Somos una startup gallega que busca disrumpir en el desarrollo de redes de drones descentralizadas, 
-           ofreciendo una manera sencilla a los comercios y empresas de gestionar sus propias flotas de drones.
-         </p>
+
+  <section id="hero">
+    <p>¿Quieres estar al tanto de nuestras novedades? Síguenos en 
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+  </section>
+
+  <section id="nosotros">
+    <h2>SOBRE NOSOTROS</h2>
+    <p>Somos una empresa dedicada a...</p>
+  </section>
+
+  <section id="vision" class="reveal">
+    <h2>NUESTRA VISIÓN</h2>
+    <div class="servicios">
+      <div class="servicio">
+        <h3>Servicio 1</h3>
+        <p>Descripción breve del servicio 1, sus beneficios o lo que ofrece.</p>
       </div>
-      <div class="content-text">
-         <p>
-           Nuestra página web se encuentra en desarrollo. Mientras tanto, puedes seguirnos en LinkedIn o contactarnos por correo electrónico. 
-           Pronto tendremos más información disponible.
-         </p>
+      <div class="servicio">
+        <h3>Servicio 2</h3>
+        <p>Descripción breve del servicio 2, con enfoque en lo que aporta al cliente.</p>
+      </div>
+      <div class="servicio">
+        <h3>Servicio 3</h3>
+        <p>Explicación corta del servicio 3, clara y directa.</p>
       </div>
     </div>
-  </main>
+  </section>
+  
+
+  <section id="objetivos" class="reveal">
+    <h2>OBJETIVOS</h2>
+    <P> Donpollo.com</P>
+  </section>
+
+
+
   <footer>
-    <p>
-      ¿Quieres saber más? 
-      <a href="https://www.linkedin.com/company/xistra" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a> | 
-      <a href="mailto:contacto@xistra.gal">contacto@xistra.gal</a>
-    </p>
+    <div class="footer-contenido">
+      <p>&copy; 2025 XISTRA. Todos los derechos reservados.</p>
+    <a href="mailto:contacto@xistra.gal">contacto@xistra.gal</a>
+    </div>
   </footer>
+
+
 </body>
 </html>

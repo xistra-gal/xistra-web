@@ -1,0 +1,246 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Ubuntu', sans-serif;
+    color: #ffffff;
+    line-height: 1.6;
+    background-image: url('assets/images/Fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    font-size: 1.2rem;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: -1;
+  }
+  
+
+
+
+    h1 {
+        font-family: 'Airbeat', sans-serif;
+        font-weight: bold;
+        font-size: 3rem;
+        color: #ffffff;
+        text-align: center;
+    }
+    
+    h2{
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: bold;
+        font-size: 3rem;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 30%;
+      height: 2px;
+      margin: 0.5rem auto 0;
+      background-color: #ffffff5d;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+    }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(90deg, rgba(34, 187, 187, 0.29), rgba(255, 145, 0, 0.226));
+
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+  }
+
+  a {
+    color: #00ccff;
+  }
+
+  p {
+    text-align: center;
+  }
+
+
+  
+  section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+#hero {
+    margin-top: 4rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 1rem 2rem;
+    transition: transform 0.3s;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    background-color: #00262956;
+  }
+
+  @font-face {
+    font-family: 'Airbeat';
+    src: url('assets/fonts/Airbeat.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Ubuntu';
+    src: url('assets/fonts/Ubuntu-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('assets/fonts/Ubuntu-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  #hero {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+
+html {
+    scroll-behavior: smooth;
+  }
+
+
+  .footer-contenido {
+    display: flex;
+    justify-content: center;       /* Centra los elementos horizontalmente */
+    align-items: center;           /* Centra verticalmente */
+    gap: 2rem;                     /* Espacio entre los textos */
+    flex-wrap: wrap;               /* Permite que se adapten en pantallas pequeñas */
+    text-align: center;
+  }
+
+
+  .servicios {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  
+  .servicio {
+    background-color: rgba(0, 225, 255, 0.06);
+    border-radius: 5px;
+    padding: 2rem;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .servicio h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+.servicio p {
+    font-size: 80%;
+
+}
+  
+  .servicio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
+
+  
+
+
+
+@media (max-width: 750px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    section {
+      padding: 40px 15px;
+    }
+  
+    #hero {
+      font-size: 1em;
+      padding: 1rem;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    nav a {
+      font-size: 1rem;
+    }
+  
+    footer {
+      padding: 15px;
+      font-size: 0.8em;
+    }
+  }
+  
