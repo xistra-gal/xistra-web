@@ -95,8 +95,8 @@
   
   section {
     padding: 60px 20px;
-    max-width: 1200px;
-    margin: auto;
+    max-width: 1000px;
+    margin: 0 auto;
   }
   
 #hero {
@@ -168,7 +168,7 @@ html {
     display: flex;
     justify-content: center;       /* Centra los elementos horizontalmente */
     align-items: center;           /* Centra verticalmente */
-    gap: 2rem;                     /* Espacio entre los textos */
+    gap: 5rem;                     /* Espacio entre los textos */
     flex-wrap: wrap;               /* Permite que se adapten en pantallas pequeñas */
     text-align: center;
   }
@@ -183,7 +183,7 @@ html {
   }
   
   .servicio {
-    background-color: rgba(0, 225, 255, 0.06);
+    background-color: rgba(0, 225, 255, 0.096);
     border-radius: 5px;
     padding: 2rem;
     width: 30%;
@@ -198,12 +198,13 @@ html {
   }
 .servicio p {
     font-size: 80%;
+    text-align: justify;
 
 }
   
   .servicio:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 16px rgba(0, 69, 82, 0.3);
   }
 
   
@@ -223,12 +224,12 @@ html {
     }
   
     section {
-      padding: 40px 15px;
+      padding: 30px 15px;
     }
   
     #hero {
       font-size: 1em;
-      padding: 1rem;
+      padding: 0.2rem;
     }
   
     h1 {
@@ -236,16 +237,24 @@ html {
     }
   
     h2 {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
   
     nav a {
       font-size: 1rem;
     }
+
+    p {
+      font-size: 0.8em;
+    }
   
     footer {
       padding: 15px;
       font-size: 0.8em;
+    }
+
+    .servicio {
+      width: 100%;
     }
   }
   
