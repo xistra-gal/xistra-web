@@ -21,6 +21,7 @@
         <li><a href="#nosotros">¿Qué hacemos?</a></li>
         <li><a href="#vision">Nuestra Vision</a></li>
         <li><a href="#contacto">Contacto</a></li>
+        <li><a href="Actualidad.html">Actualidad</a></li>
         <!--
         <li><a href="#objetivos">Objetivos</a></li>
         -->
@@ -89,6 +90,22 @@
       <p>&copy; 2025 XISTRA. Todos los derechos reservados.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll("section");
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            entry.target.classList.add("active");
+            // Si quieres que la animación ocurra solo una vez:
+            // observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
 
 
 </body>

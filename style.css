@@ -96,8 +96,17 @@
   section {
     padding: 60px 20px;
     max-width: 1000px;
-    margin: 0 auto;
+    margin-top: 50px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
   }
+  section.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   
 #hero {
     margin-top: 4rem;
