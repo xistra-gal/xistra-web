@@ -1,21 +1,25 @@
-// --- Cursor Personalizado ---
-const cursor = document.getElementById('custom-cursor');
-window.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-// Efectos de hover para elementos clicables
-document.querySelectorAll('a, .cta-button').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        cursor.style.backgroundColor = 'rgba(0, 247, 255, 0.5)';
+// --- Cursor Personalizado ---
+if (!isMobile) {
+    const cursor = document.getElementById('custom-cursor');
+    window.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
     });
-    el.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-        cursor.style.backgroundColor = '#00f7ff';
+
+    // Efectos de hover para elementos clicables
+    document.querySelectorAll('a, .cta-button').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            cursor.style.backgroundColor = 'rgba(0, 247, 255, 0.5)';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            cursor.style.backgroundColor = '#00f7ff';
+        });
     });
-});
+}
 
 // --- Animación de partículas interactivas ---
 const canvas = document.getElementById('particle-canvas');

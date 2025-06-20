@@ -82,3 +82,12 @@ h1, .h1-font {
     box-shadow: 0 0 15px 5px rgba(0, 247, 255, 0.4);
     transition: transform 0.2s ease-out, background-color 0.2s ease, box-shadow 0.2s ease;
 }
+
+@media (max-width: 768px) {
+    body {
+        cursor: auto; /* Muestra el cursor por defecto en móviles */
+    }
+    #custom-cursor {
+        display: none; /* Oculta el cursor personalizado en móviles */
+    }
+}
