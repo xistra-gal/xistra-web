@@ -90,4 +90,9 @@ h1, .h1-font {
     #custom-cursor {
         display: none; /* Oculta el cursor personalizado en móviles */
     }
+
+    /* Evita que el footer se solape con el contenido en móviles */
+    .hero-content {
+        padding-bottom: 5rem;
+    }
 }
