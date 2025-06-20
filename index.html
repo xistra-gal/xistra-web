@@ -1,102 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>XISTRA</title>
-  <link rel="icon" href="images/Logo.png" type="image/png" sizes="32x32">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XISTRA - Inteligencia Artificial Multiagente</title>
+    <link rel="icon" href="assets/images/Logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+<body class="overflow-hidden">
+    <!-- Cursor Personalizado -->
+    <div id="custom-cursor"></div>
 
+    <!-- Animación de fondo -->
+    <canvas id="particle-canvas"></canvas>
+    
+    <!-- Hero Section -->
+    <main id="main-section" class="relative min-h-screen flex flex-col items-center justify-center text-center p-6">
+        <div class="hero-content container mx-auto px-6">
+            
+            <!-- Logo -->
+            <h1 class="text-5xl md:text-6xl font-black tracking-wider text-white mb-12">XISTRA</h1>
 
+            <!-- Titular que se escribe solo -->
+            <h2 id="headline" class="text-2xl md:text-4xl font-bold text-white max-w-4xl mx-auto min-h-[6rem] md:min-h-[8rem]"></h2>
+            
+            <!-- Contenido que aparece después -->
+            <div id="content-after-headline">
+                <div class="max-w-4xl mx-auto space-y-8 mt-8">
+                    <p class="text-lg md:text-xl text-gray-400">
+                        Creemos en la posibilidad de conectar tecnología y humanos de manera natural, expandiendo nuestras capacidades gracias a los sistemas autónomos y al Internet of Things.
+                    </p>
+                    <p class="text-lg md:text-xl text-gray-200 font-bold">
+                        Por ello, investigamos y desarrollamos herramientas para integrar drones autónomos en operaciones en tiempo real, permitiendo que operen sin control humano directo y proporcionen información crítica.
+                    </p>
+                </div>
 
-<body>
+                <!-- Llamada a la acción -->
+                <div class="mt-16">
+                     <p class="text-lg text-gray-400 mb-6">Próximamente nuestra web estará lista. ¿Quieres saber más?</p>
+                     <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                         <a href="https://www.linkedin.com/company/xistra" target="_blank" rel="noopener noreferrer" class="cta-button">Síguenos en LinkedIn</a>
+                         <a href="mailto:contacto@xistra.gal" class="cta-button">Contáctanos por Mail</a>
+                     </div>
+                </div>
+            </div>
+        </div>
 
-  <div class="overlay"></div>
+        <!-- Footer -->
+        <footer class="absolute bottom-0 p-6 text-center text-gray-600 z-10">
+            &copy; 2025 XISTRA. Todos los derechos reservados.
+        </footer>
+    </main>
 
-  <header>
-    <h1>XISTRA</h1>
-    <nav>
-      <ul>
-        <li><a href="#nosotros">¿Qué hacemos?</a></li>
-        <li><a href="#vision">Nuestra Vision</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <!--
-        <li><a href="#objetivos">Objetivos</a></li>
-        -->
-      </ul>
-    </nav>
-  </header>
-
-  <section id="hero">
-    <p>Estamos trabajando en nuestra web y el contenido se encuentra limitado. ¿Quieres estar al tanto de nuestras novedades? Síguenos en 
-        <a href="https://www.linkedin.com/company/xistra" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </p>
-  </section>
-
-  <section id="quehacemos">
-    <h2>¿QUÉ HACEMOS?</h2>
-    <p>Somos una startup gallega que busca disrumpir en el campo de los sistemas de inteligencia artificial
-      multiagente.</p>
-
-    <br>
-    <p><strong>Creemos en la posibilidad de conectar tecnología y humanos de manera natural, expandiendo nuestras
-      capacidades gracias a los sistemas autónomos y al Internet of Things.</strong></p>
-
-    <br>
-    <p>
-      Por ello, estamos desarrollando un sistema de gestión de drones autónomos que permite a los clientes 
-      delegar tareas a la flota sin necesidad de controlar explicitamente cada dron.
-    </p>
-  </section>
-
-  <section id="vision" class="reveal">
-    <h2>NUESTRA VISIÓN</h2>
-    <p> Nuestra visión es una red de drones gestionada por <strong>agentes autónomos</strong>, donde los usuarios interactúan de forma
-      natural con la flota sin requerimientos técnicos. 
-    </p>
-    <div class="servicios">
-      <div class="servicio">
-        <h3>Sencillez</h3>
-        <p>Creemos en una solución que pueda ser utilizada por cualquier persona, sin necesidad de conocimientos técnicos avanzados
-          ni dificultades de integración. El lenguaje natural será nuestro pilar fundamental</p>
-      </div>
-      <div class="servicio">
-        <h3>Escalabilidad</h3>
-        <p>Nuestro sistema está siendo diseñado para ser naturalmente escalable. La infraestructura será robusta y capaz de soportar 
-          un número variable de drones y usuarios, permitiendo su crecimiento sin problemas.</p>
-        </p>
-      </div>
-      <div class="servicio">
-        <h3>Universalidad</h3>
-        <p>
-          Queremos facilitar la integración de nuestros sistemas en cualquier entorno, sin importar el tipo de dron o la aplicación.
-          Por ello, nos centramos en establecer protocolos de comunicación universales.
-        </p>
-      </div>
-    </div>
-  </section>
-  
-<!--
-  <section id="objetivos" class="reveal">
-    <h2>OBJETIVOS</h2>
-    <P> Donpollo.com</P>
-  </section>
--->
-
-  <section id="contacto">
-    <h2>CONTACTO</h2>
-    <P> ¿Quieres saber más? ¿Estás interesado en nuestra propuesta? ¡<a href="mailto:contacto@xistra.gal">Contáctanos</a>!
-    </P>
-  </section>
-
-
-  <footer>
-    <div class="footer-contenido">
-      <p>&copy; 2025 XISTRA. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
