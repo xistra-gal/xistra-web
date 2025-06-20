@@ -9,8 +9,8 @@
 /* Estilos personalizados */
 body {
     font-family: 'Ubuntu', sans-serif;
-    background-color: #0a0a0a;
-    color: #e5e5e5;
+    background-color: #070b0c;
+    color: #f1f1e9;
     cursor: none; /* Oculta el cursor por defecto */
 }
 h1, .h1-font {
@@ -33,8 +33,8 @@ h1, .h1-font {
 /* Estilo para los botones de llamada a la acción */
 .cta-button {
     display: inline-block;
-    border: 2px solid #00a8a8;
-    color: #00a8a8;
+    border: 2px solid #2beeee;
+    color: #22babb;
     font-weight: bold;
     padding: 12px 24px;
     border-radius: 9999px; /* Forma de píldora */
@@ -44,16 +44,16 @@ h1, .h1-font {
     background-color: transparent;
 }
 .cta-button:hover {
-    background-color: #00a8a8;
+    background-color: #22babb;
     color: #0a0a0a;
-    box-shadow: 0 0 20px #00a8a8;
+    box-shadow: 0 0 20px #22babb;
     transform: translateY(-2px);
 }
 
 /* Animación de parpadeo del cursor de texto */
 @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: #00a8a8; }
+    50% { border-color: #22babb; }
 }
 
 /* Estilos para el contenido que aparece después */
@@ -72,14 +72,14 @@ h1, .h1-font {
     position: fixed;
     width: 20px;
     height: 20px;
-    background-color: #00f7ff;
+    background-color: #00ffff;
     border-radius: 50%;
     pointer-events: none; /* Para que no interfiera con los clics */
     left: -50px; /* Posición inicial fuera de la pantalla */
     top: -50px;
     transform: translate(-50%, -50%);
     z-index: 2; /* Entre las partículas y el contenido */
-    box-shadow: 0 0 15px 5px rgba(0, 247, 255, 0.4);
+    box-shadow: 0 0 15px 5px rgba(36, 151, 155, 0.4);
     transition: transform 0.2s ease-out, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 

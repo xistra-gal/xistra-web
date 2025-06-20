@@ -54,25 +54,55 @@ window.addEventListener('resize', () => {
 resizeCanvas();
 
 let particlesArray;
-const particleColor = 'rgba(0, 168, 168, 0.5)';
 
 class Particle {
-    constructor(x, y, directionX, directionY, size, color) {
-        this.x = x;
-        this.y = y;
-        this.directionX = directionX;
-        this.directionY = directionY;
-        this.size = size;
-        this.color = color;
+    constructor() {
+        this.reset();
     }
+
+    reset() {
+        this.size = (Math.random() * 2) + 1.5;
+        this.x = (Math.random() * ((canvas.width - this.size * 2) - (this.size * 2)) + this.size * 2);
+        this.y = (Math.random() * ((canvas.height - this.size * 2) - (this.size * 2)) + this.size * 2);
+        this.directionX = (Math.random() * 0.4) - 0.2;
+        this.directionY = (Math.random() * 0.4) - 0.2;
+        this.maxLife = Math.random() * 300 + 200; // Lifespan in frames
+        this.life = this.maxLife;
+        this.opacity = 0;
+        // Hue range for blues/cyans (180 to 220)
+        this.hue = Math.random() * 40 + 180;
+    }
+
     draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        ctx.fillStyle = this.color;
+        ctx.fillStyle = `hsla(${this.hue}, 100%, 70%, ${this.opacity})`; // Lighter color for better visibility
         ctx.fill();
     }
+
     update() {
-        // Movimiento normal
+        if (this.life <= 0) {
+            this.reset();
+        }
+        this.life--;
+
+        // Fade in and out logic
+        const fadeInDuration = this.maxLife * 0.2;
+        const fadeOutDuration = this.maxLife * 0.2;
+
+        if (this.life > this.maxLife - fadeInDuration) {
+            this.opacity = 1 - ((this.life - (this.maxLife - fadeInDuration)) / fadeInDuration);
+        } else if (this.life < fadeOutDuration) {
+            this.opacity = this.life / fadeOutDuration;
+        } else {
+            this.opacity = 1;
+        }
+        
+        this.hue += 0.1;
+        if (this.hue > 220) {
+            this.hue = 180;
+        }
+
         if (this.x > canvas.width || this.x < 0) {
             this.directionX = -this.directionX;
         }
@@ -80,7 +110,6 @@ class Particle {
             this.directionY = -this.directionY;
         }
         
-        // Interacción con el ratón
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
@@ -89,7 +118,7 @@ class Particle {
             const forceDirectionY = dy / distance;
             const maxDistance = mouse.radius;
             const force = (maxDistance - distance) / maxDistance; 
-            const moveX = forceDirectionX * force * 7; // Aumentamos la fuerza de repulsión
+            const moveX = forceDirectionX * force * 7;
             const moveY = forceDirectionY * force * 7;
 
             this.x -= moveX;
@@ -106,24 +135,21 @@ function init() {
     particlesArray = [];
     let numberOfParticles = (canvas.width * canvas.height) / 9000;
     for (let i = 0; i < numberOfParticles; i++) {
-        let size = (Math.random() * 2) + 1.5;
-        let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
-        let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
-        let directionX = (Math.random() * .2) - .1;
-        let directionY = (Math.random() * .2) - .1;
-        particlesArray.push(new Particle(x, y, directionX, directionY, size, particleColor));
+        particlesArray.push(new Particle());
     }
 }
 
 function connect() {
-    let opacityValue = 1;
     for (let a = 0; a < particlesArray.length; a++) {
         for (let b = a; b < particlesArray.length; b++) {
             let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
                          + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+            
             if (distance < (canvas.width / 8) * (canvas.height / 8)) {
-                opacityValue = 1 - (distance / 20000);
-                ctx.strokeStyle = `rgba(0, 168, 168, ${opacityValue * 0.1})`;
+                const opacityBasedOnDistance = 1 - (distance / 20000);
+                const combinedOpacity = particlesArray[a].opacity * particlesArray[b].opacity;
+                
+                ctx.strokeStyle = `rgba(34, 186, 187, ${opacityBasedOnDistance * combinedOpacity * 0.5})`;
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
