@@ -180,12 +180,12 @@ function typeWriter() {
     if (i < text.length) {
         headlineElement.innerHTML = text.substring(0, i + 1) + '<span style="border-right: .15em solid #00a8a8; animation: blink-caret .75s step-end infinite;"></span>';
         i++;
-        setTimeout(typeWriter, 30); // Velocidad de escritura
+        setTimeout(typeWriter, 25); // Velocidad de escritura
     } else {
         headlineElement.innerHTML = text;
         setTimeout(() => {
             contentBelow.classList.add('is-visible');
-        }, 500);
+        }, 250);
     }
 }
 
