@@ -1,0 +1,67 @@
+---
+import "../styles/global.css";
+---
+
+<nav class="flex flex-row justify-between items-center text-main-green">
+	<img
+		class="w-40"
+		src="/src/assets/logoFull.jpeg"
+		alt="Una estrella verde y naranja y el nombre de Xistra"
+		draggable="false"
+	/>
+	<button
+		class="button-hover-effect rounded-sm border border-main-green font-semibold flex flex-row items-center gap-2 h-fit px-4 py-4 text-main-green hover:text-white"
+	>
+		<svg
+			class="w-5 h-5 fill-current"
+			viewBox="0 -0.5 21 21"
+			version="1.1"
+			xmlns="http://www.w3.org/2000/svg"
+			xmlns:xlink="http://www.w3.org/1999/xlink"
+		>
+			<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				<g
+					transform="translate(-59.000000, -200.000000)"
+					class="fill-current"
+				>
+					<g transform="translate(56.000000, 160.000000)">
+						<path
+							d="M14.55,60 L24,60 L24,51 L14.55,51 L14.55,60 Z M3,60 L12.45,60 L12.45,51 L3,51 L3,60 Z M14.55,49 L24,49 L24,40 L14.55,40 L14.55,49 Z M3,49 L12.45,49 L12.45,40 L3,40 L3,49 Z"
+						></path>
+					</g>
+				</g>
+			</g>
+		</svg>
+		<p class="text-regular">MENU</p>
+	</button>
+</nav>
+
+<style>
+	.button-hover-effect {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.button-hover-effect::before {
+		content: "";
+		position: absolute;
+		z-index: -11111;
+		width: 100%;
+		height: 100%;
+		background-color: var(--color-main-green);
+		top: 0;
+		left: 0;
+		transform: translateY(100%);
+		transition: transform 0.5s ease;
+		z-index: 0;
+	}
+
+	.button-hover-effect:hover::before {
+		transform: translateY(0%);
+	}
+
+	.button-hover-effect > * {
+		position: relative;
+		z-index: 10;
+	}
+</style>
