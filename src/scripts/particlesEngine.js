@@ -1,5 +1,24 @@
 // fuck particle.js, i did my own particle engine
 const MAX_RANDOM_NUMBER = 50;
+const rootStyles = getComputedStyle(document.documentElement);
+const mainColor = rootStyles.getPropertyValue('--color-main-orange').trim();
+
+function hexToRgb(hex) {
+    const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    hex = hex.replace(shorthandRegex, (m, r, g, b) =>
+        r + r + g + g + b + b
+    );
+
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result
+        ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16),
+        }
+        : null;
+}
+
 
 class ParticleSystem {
     constructor(containerId) {
@@ -71,7 +90,8 @@ class ParticleSystem {
     drawParticle(particle) {
         this.ctx.beginPath();
         this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        this.ctx.fillStyle = `rgba(16, 185, 129, ${particle.opacity})`;
+        const color = hexToRgb(mainColor);
+        this.ctx.fillStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${particle.opacity})`; 
         this.ctx.fill();
     }
 
@@ -80,7 +100,8 @@ class ParticleSystem {
         this.ctx.beginPath();
         this.ctx.moveTo(p1.x, p1.y);
         this.ctx.lineTo(p2.x, p2.y);
-        this.ctx.strokeStyle = `rgba(16, 185, 129, ${opacity})`;
+        const color = hexToRgb(mainColor);
+        this.ctx.strokeStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${opacity})`;
         this.ctx.lineWidth = 1;
         this.ctx.stroke();
     }

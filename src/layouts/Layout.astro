@@ -1,3 +1,7 @@
+---
+import NavBar from "../components/NavBar.astro";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,12 +10,18 @@
 		<link rel="icon" type="image/svg+xml" href="/logo.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Xistra</title>
-  		<link rel="preconnect" href="https://fonts.googleapis.com">
-  		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
+		></script>
 	</head>
 	<body>
+		<NavBar />
 		<slot />
 	</body>
 </html>
@@ -20,5 +30,6 @@
 	body {
 		margin: 2.5rem 2.5rem 0rem 2.5rem;
 		padding: 0;
+		font-family: "Montserrat", sans-serif;
 	}
 </style>

@@ -1,0 +1,29 @@
+---
+import { newsData } from "../../data/localNews";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+    return newsData.map((news) => ({
+        params: { slug: news.slug },
+    }));
+}
+
+const { slug } = Astro.params;
+
+const newsItem = newsData.find((item) => item.slug === slug);
+
+if (!newsItem) {
+    throw new Error(`News item not found for slug: ${slug}`);
+}
+---
+
+<head>
+    <title>{`Noticias Xistra | {newsItem.title}`}</title>
+    <meta charset="UTF-8" />
+</head>
+
+<Layout>
+    <h1>{newsItem.title}</h1>
+    <p>{newsItem.topic}</p>
+    <div>{"Lorem40"}</div>
+</Layout>

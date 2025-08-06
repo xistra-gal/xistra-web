@@ -4,11 +4,14 @@ import NavBar from '../components/NavBar.astro';
 import Intro from '../components/Intro.astro';
 import Values from '../components/Values.astro'
 import Sectores from '../components/Sectores.astro'
+import NewsSection from '../components/NewsSection';
+import Footer from '../components/Footer';
 ---
 
 <Layout>
-	<NavBar />
 	<Intro />
 	<Values />
 	<Sectores />
+	<NewsSection client:load />
+	<Footer />
 </Layout>
