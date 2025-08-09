@@ -25,8 +25,6 @@ export default function NewsSection() {
                 temporal.push(result[i]);
             }
             setNews(temporal);
-            console.log(temporal);
-
         } catch (error) {
         }
     }
