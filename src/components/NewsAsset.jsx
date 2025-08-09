@@ -2,7 +2,7 @@ export default function NewsAsset({ slug, imgUrl, title, topic }) {
     return (
         <div className="w-3xs h-80 flex flex-col items-center justify-center gap-5">
             <img className="w-full h-1/2 rounded object-cover" src={imgUrl} alt="" />
-            <div>
+            <div className="w-full">
                 <h4 className="uppercase font-semibold text-base">{title}</h4>
 
                 <div className="mt-8 flex flex-row w-full items-center justify-between">

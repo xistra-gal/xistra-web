@@ -2,14 +2,17 @@ import { useEffect, useState } from "react"
 import Line from "./Line"
 import NewsAsset from "./NewsAsset"
 
-const url = '/api/news'
+const APIURL = import.meta.env.PUBLIC_API_URL;
 
 export default function NewsSection() {
     const [news, setNews] = useState([])
 
     async function fetchNews() {
         try {
-            const response = await fetch(url);
+            const response = await fetch(`${APIURL}/api/news`, {
+                method: 'GET',
+                mode: 'cors'
+            });
             if (!response.ok) {
                 throw new Error(`Response status: ${response.status}`);
             }
@@ -25,7 +28,6 @@ export default function NewsSection() {
             console.log(temporal);
 
         } catch (error) {
-            console.log('Something went wrong...');
         }
     }
 
@@ -40,7 +42,7 @@ export default function NewsSection() {
             <Line />
 
             <div className="flex flex-row justify-between items-end">
-                <h3 className="font-bold text-2xl w-1/3 uppercase">Conoce nuestros avances e
+                <h3 className="font-bold text-2xl w-1/2 lg:w-1/3 uppercase">Conoce nuestros avances e
                     <span className="relative inline-block">
                         <span className="bg-main-green absolute bottom-0.5 left-0 w-full h-1.5 sm:h-3 -z-10"></span>
                         <span className="relative"> investigaciones</span>
@@ -66,7 +68,7 @@ export default function NewsSection() {
                         <NewsAsset
                             key={index}
                             slug={item.slug}
-                            imgUrl={item.imgUrl ?? '/src/assets/dronFlying.png'}
+                            imgUrl={item.image_url ?? '/src/assets/dronFlying.png'}
                             title={item.title}
                             topic={item.topic}
                         />
