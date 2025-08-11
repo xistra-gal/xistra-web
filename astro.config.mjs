@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [react()],
   output: 'server', // for dynamic routing
   adapter: node({
-    mode: 'standalone'
+    mode: 'standalone',
   }),
   server: {
     host: '0.0.0.0',

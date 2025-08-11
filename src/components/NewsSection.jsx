@@ -66,7 +66,7 @@ export default function NewsSection() {
                         <NewsAsset
                             key={index}
                             slug={item.slug}
-                            imgUrl={item.image_url ?? '/src/assets/dronFlying.png'}
+                            imgUrl={item.image_url ?? '/dronFlying.png'}
                             title={item.title}
                             topic={item.topic}
                         />
