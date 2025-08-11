@@ -20,7 +20,7 @@ export default defineConfig({
     define: {
       'import.meta.env.PUBLIC_API_URL': JSON.stringify(process.env.PUBLIC_API_URL || 'http://localhost:3000')
     },
-    preview: {
+    server: {
       allowedHosts: [
         'xistra-landing-471227216520.europe-west1.run.app'
       ]
