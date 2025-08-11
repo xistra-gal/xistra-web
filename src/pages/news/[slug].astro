@@ -1,29 +1,36 @@
 ---
-import { newsData } from "../../data/localNews";
 import Layout from "../../layouts/Layout.astro";
 
-export async function getStaticPaths() {
-    return newsData.map((news) => ({
-        params: { slug: news.slug },
-    }));
+const APIURL = import.meta.env.PUBLIC_API_URL;
+
+async function fetchNews() {
+    const response = await fetch(`${APIURL}/api/news`, {
+        method: "GET",
+        mode: "cors",
+    });
+    if (!response.ok) throw new Error(`Error fetching news`);
+    return await response.json(); // array de noticias
 }
 
 const { slug } = Astro.params;
+const allNews = await fetchNews();
 
-const newsItem = newsData.find((item) => item.slug === slug);
+const newsItem = allNews.find(
+    (item: { slug: string | undefined }) => item.slug === slug,
+);
 
-if (!newsItem) {
-    throw new Error(`News item not found for slug: ${slug}`);
-}
+if (!newsItem) throw new Error(`No se encontró la noticia para slug: ${slug}`);
 ---
 
 <head>
-    <title>{`Noticias Xistra | {newsItem.title}`}</title>
+    <title>{`Noticias Xistra | ${newsItem.title}`}</title>
     <meta charset="UTF-8" />
 </head>
 
 <Layout>
-    <h1>{newsItem.title}</h1>
-    <p>{newsItem.topic}</p>
-    <div>{"Lorem40"}</div>
+    <article class="my-5">
+        <h1 class="text-center text-4xl font-bold uppercase">{newsItem.title}</h1>
+        <p class="indent-2 mt-4">{newsItem.topic}</p>
+        <div class="indent-2">{newsItem.content}</div>
+    </article>
 </Layout>
