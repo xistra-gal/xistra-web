@@ -8,6 +8,10 @@
     --text-regular: 0.875rem;
 }
 
+html {
+  margin: 0px auto 0px auto;
+}
+
 * {
   font-family: 'Montserrat', sans-serif;
 }

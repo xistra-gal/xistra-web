@@ -53,10 +53,7 @@ export default function NewsSection() {
             </div>
 
             <article
-                className={`flex flex-row gap-14 mt-5 items-center min-h-[200px] w-full ${news.length === 0 ? 'justify-center items-center' : ''
-                    }`}
-                id="news_container"
-            >
+                className={`mt-5 min-h-[200px] w-full grid grid-cols-2 gap-6 md:flex md:flex-row md:gap-14 md:items-center ${news.length === 0 ? 'justify-center items-center' : ''}`} id="news_container">
                 {news.length === 0 ? (
                     <p className="text-sm font-semibold italic text-center text-gray-600">
                         ¡Vaya, parece que todavía no tenemos ninguna publicación (o algo ha salido mal)!
