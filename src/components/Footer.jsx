@@ -1,6 +1,33 @@
 import { FaLinkedin } from "react-icons/fa";
+import { useState } from "react";
+
+const API_URL = import.meta.env.PUBLIC_API_URL;
 
 export default function Footer() {
+
+    // email of the user
+    const [email, setEmail] = useState('');
+
+    async function handleClick(email) {
+        console.log(email);
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        let res = emailRegex.test(email);
+        console.log(res);
+        if (res === false) {
+            throw new Error("Email is not correct");
+        }
+    
+        const response = await fetch(`${API_URL}/api/email`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email })
+        })
+        
+        return 0;
+    }
+
     return (
 
         <footer className="text-black py-10 w-full px-6 lg:px-20">
@@ -43,11 +70,21 @@ export default function Footer() {
 
                 <div>
                     <h4 className="font-semibold mb-4">¡Apúntate para no perderte nada!</h4>
-                    <form className="flex flex-col gap-3">
+                    <form
+                        className="flex flex-col gap-3"
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            handleClick(email);
+                            
+                        }}
+                    >
                         <input
                             type="email"
-                            placeholder="Enter in your email here"
+                            placeholder="Escribe tu mail aquí"
                             className="border-b border-black bg-transparent focus:outline-none py-1"
+                            onChange={(e) => {
+                                setEmail(e.target.value);
+                            }}
                         />
                         <button
                             type="submit"
@@ -56,6 +93,8 @@ export default function Footer() {
                             ¡Apúntame!
                         </button>
                     </form>
+
+
                 </div>
             </div>
 
