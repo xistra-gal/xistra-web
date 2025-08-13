@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NewsDashboard from "../components/NewsDashboard";
+---
+
+<Layout>
+    <section class="flex items-center justify-center flex-col my-5">
+        <h1 class="uppercase text-4xl text-center mb-10">
+            Todas las noticias sobre <p class="font-bold">XISTRA</p>
+        </h1>
+        <NewsDashboard client:load/>
+    </section>
+</Layout>

@@ -39,9 +39,9 @@ export default function Footer() {
                 <div>
                     <h4 className="mb-4 font-semibold">Organización</h4>
                     <ul className="space-y-2">
-                        <li><a href="#" className="hover:underline">Sobre nosotros</a></li>
-                        <li><a href="#" className="hover:underline">Noticias</a></li>
-                        <li><a href="#" className="hover:underline">Contactos</a></li>
+                        <li><a href="/404" className="hover:underline">Sobre nosotros</a></li>
+                        <li><a href="/noticias" className="hover:underline">Noticias</a></li>
+                        <li><a href="/404" className="hover:underline">Contactos</a></li>
                     </ul>
                 </div>
 
@@ -61,9 +61,9 @@ export default function Footer() {
                 <div>
                     <h4 className="font-semibold mb-4">Developer Hub</h4>
                     <ul className="space-y-2">
-                        <li><a href="#" className="hover:underline">Xistra SDK</a></li>
+                        <li><a href="/404" className="hover:underline">Xistra SDK</a></li>
                         <li>
-                            <a href="#" className="hover:underline">Hugging Face Hub</a>
+                            <a href="/404" className="hover:underline">Hugging Face Hub</a>
                         </li>
                     </ul>
                 </div>

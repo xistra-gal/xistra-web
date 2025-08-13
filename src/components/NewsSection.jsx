@@ -1,36 +1,19 @@
 import { useEffect, useState } from "react"
 import Line from "./Line"
-import NewsAsset from "./NewsAsset"
+import SmallNewsAsset from "./SmallNewsAsset"
+import fetchNews from "../scripts/fetchNews"
 
-const APIURL = import.meta.env.PUBLIC_API_URL;
+const NEWS_LIMIT_TO_RENDER= 4;
 
 export default function NewsSection() {
     const [news, setNews] = useState([])
 
-    async function fetchNews() {
-        try {
-            const response = await fetch(`${APIURL}/api/news`, {
-                method: 'GET',
-                mode: 'cors'
-            });
-            if (!response.ok) {
-                throw new Error(`Response status: ${response.status}`);
-            }
-
-            const result = await response.json();
-            let temporal = [];
-
-            // it will render just the first 4 latest news
-            for (let i = 0; i <= 3 && i < result.length; i++) {
-                temporal.push(result[i]);
-            }
-            setNews(temporal);
-        } catch (error) {
-        }
-    }
-
     useEffect(() => {
-        fetchNews();
+        async function loadNews() {
+            const data = await fetchNews(NEWS_LIMIT_TO_RENDER);
+            setNews(data || []);
+        }
+        loadNews()
     }, []);
 
     return (
@@ -48,7 +31,7 @@ export default function NewsSection() {
                 </h3>
 
                 <button className="uppercase tracking-wide hover:cursor-pointer text-xs underline hover:-translate-y-0.5 duration-500">
-                    <a href={`#toNews`}>Ver todas las noticias</a>
+                    <a href="/noticias">Ver todas las noticias</a>
                 </button>
             </div>
 
@@ -60,7 +43,7 @@ export default function NewsSection() {
                     </p>
                 ) : (
                     news.map((item, index) => (
-                        <NewsAsset
+                        <SmallNewsAsset
                             key={index}
                             slug={item.slug}
                             imgUrl={item.image_url ?? '/dronFlying.png'}
