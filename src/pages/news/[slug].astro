@@ -1,36 +1,23 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
-const APIURL = import.meta.env.PUBLIC_API_URL;
-
-async function fetchNews() {
-    const response = await fetch(`${APIURL}/api/news`, {
-        method: "GET",
-        mode: "cors",
-    });
-    if (!response.ok) throw new Error(`Error fetching news`);
-    return await response.json(); // array de noticias
-}
+import fetchNews from "../../scripts/fetchNews";
+import { marked } from "marked";
 
 const { slug } = Astro.params;
 const allNews = await fetchNews();
 
-const newsItem = allNews.find(
-    (item: { slug: string | undefined }) => item.slug === slug,
-);
+const newsItem = allNews.find(item => item.slug === slug);
 
 if (!newsItem) throw new Error(`No se encontró la noticia para slug: ${slug}`);
+
+const contentHTML = marked(newsItem.content);
 ---
 
-<head>
-    <title>{`Noticias Xistra | ${newsItem.title}`}</title>
-    <meta charset="UTF-8" />
-</head>
-
 <Layout>
-    <article class="my-5">
+    <article class="my-5 prose">
         <h1 class="text-center text-4xl font-bold uppercase">{newsItem.title}</h1>
         <p class="indent-2 mt-4">{newsItem.topic}</p>
-        <div class="indent-2">{newsItem.content}</div>
+
+        <div class="indent-2" set:html={contentHTML}></div>
     </article>
 </Layout>
