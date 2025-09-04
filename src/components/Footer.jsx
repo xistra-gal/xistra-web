@@ -9,10 +9,8 @@ export default function Footer() {
     const [email, setEmail] = useState('');
 
     async function handleClick(email) {
-        console.log(email);
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         let res = emailRegex.test(email);
-        console.log(res);
         if (res === false) {
             throw new Error("Email is not correct");
         }
@@ -30,9 +28,16 @@ export default function Footer() {
 
     return (
 
-        <footer className="text-black py-10 w-full px-6 lg:px-20">
+        <footer className="text-black w-full px-6 lg:px-20">
 
-            <img className="mx-auto scale-150 my-5" draggable="false" src="/xistra.svg" alt="" />
+            <div className="flex justify-center mb-6">
+                <img 
+                    className="h-32 w-auto" 
+                    draggable="false" 
+                    src="/logoGreen.png" 
+                    alt="" 
+                />
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
 
