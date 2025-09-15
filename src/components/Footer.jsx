@@ -34,22 +34,23 @@ export default function Footer() {
                 <img 
                     className="h-32 w-auto" 
                     draggable="false" 
-                    src="/logoGreen.png" 
+                    src="/xistra.png" 
                     alt="" 
                 />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
 
                 <div>
                     <h4 className="mb-4 font-semibold">Organización</h4>
                     <ul className="space-y-2">
                         <li><a href="/404" className="hover:underline">Sobre nosotros</a></li>
                         <li><a href="/noticias" className="hover:underline">Noticias</a></li>
-                        <li><a href="/404" className="hover:underline">Contactos</a></li>
+                        <li><a href="mailto:xistra.gal@gmail.com" className="hover:underline">Contacto</a></li>
                     </ul>
                 </div>
 
+                {/*
                 <div>
                     <h4 className="font-semibold mb-4">Productos</h4>
                     <ul className="space-y-2">
@@ -62,16 +63,18 @@ export default function Footer() {
 
                     </ul>
                 </div>
+                */}
 
                 <div>
                     <h4 className="font-semibold mb-4">Developer Hub</h4>
                     <ul className="space-y-2">
-                        <li><a href="/404" className="hover:underline">Xistra SDK</a></li>
+                        <li><a href="https://github.com/xistra-gal" className="hover:underline">Xistra SDK</a></li>
                         <li>
                             <a href="/404" className="hover:underline">Hugging Face Hub</a>
                         </li>
                     </ul>
-                </div>
+                </div> 
+                
 
                 <div>
                     <h4 className="font-semibold mb-4">¡Apúntate para no perderte nada!</h4>
