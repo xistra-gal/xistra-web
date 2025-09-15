@@ -23,10 +23,10 @@ export default function NewsSection() {
             <Line />
 
             <div className="flex flex-row justify-between items-end">
-                <h3 className="font-bold text-2xl w-1/2 lg:w-1/3 uppercase">Conoce nuestros avances e
+                <h3 className="font-bold text-2xl w-1/2 lg:w-1/3 uppercase">Conoce nuestros <br />
                     <span className="relative inline-block">
                         <span className="bg-main-green absolute bottom-0.5 left-0 w-full h-1.5 sm:h-3 -z-10"></span>
-                        <span className="relative"> investigaciones</span>
+                        <span className="relative"> avances</span>
                     </span>
                 </h3>
 
